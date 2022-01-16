@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+  <body>
+    <!-- Navigation-->
+    <%- include('layouts/navbar'); -%>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('/assets/img/main-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Create New Post</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+             <% if(errors !== null && errors.length > 0) { %>
+              <ul class="list-group">
+              <% for (let i = 0; i < errors.length; i++) { %>
+                <li class="list-group-item list-group-item-danger"><%= errors[i] %></li>
+                <% } %>
+                </ul>
+              <% } %>
+            <form action="/posts/store" method="POST" enctype="multipart/form-data">
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="<%= title %>" />
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Description</label>
+                  <textarea type="text" rows="5" class="form-control" id="content" name="content"><%= content %></textarea>
+                  <script>
+                    $('#content').summernote({
+                      placeholder: 'Hello word!',
+                      tabsize: 2,
+                      height: 200
+                    });
+                  </script>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Image</label>
+                  <input type="file" class="form-control" id="image" name="image"/>
+                </div>
+              </div>
+              <br />
+              <div id="success"></div>
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->
+    <%- include('layouts/footer'); -%>
+    <!-- JS-->
+    <%- include('layouts/scripts'); -%>
+  </body>
+</html>
