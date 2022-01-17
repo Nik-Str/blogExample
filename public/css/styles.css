@@ -4,23 +4,30 @@ body {
   font-size: 16px;
 }
 
-/* Backgrounds */
-.index-header {
+/* Backgrounds*/
+.main-header {
   background-image: url("../assets/img/bg.jpg");
   height: 30rem;
+}
+
+@media only screen and (min-width: 1920px) {
+  .main-header {
+    background-image: url("../assets/img/bg4k.jpg");
+    height: 50rem;
+  }
+}
+.post-header {
+  height: 40rem;
+}
+
+.main-header, .post-header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
 }
 
-@media only screen and (min-width: 1920px) {
-  .index-header {
-    background-image: url("../assets/img/bg4k.jpg");
-    height: 50rem;
-  }
-}
-/* Header*/
+/*Header*/
 header nav {
   background-color: rgba(255, 255, 255, 0.205);
 }
@@ -34,8 +41,11 @@ header nav .collapse {
   position: absolute;
   right: 2rem;
 }
+header nav .nav-link {
+  transition: 1s;
+}
 header nav .nav-link:hover {
-  background-color: rgba(31, 53, 66, 0.452);
+  background-color: rgba(31, 53, 66, 0.151);
   color: #3b3b3b;
 }
 @media only screen and (max-width: 992px) {
@@ -45,11 +55,24 @@ header nav .nav-link:hover {
   }
 }
 
-/*Section */
+/* Footer*/
+footer .p-2 {
+  font-size: 0.9rem;
+  color: grey;
+  text-align: center;
+}
+footer a {
+  color: black;
+}
+
+/*-------------------Home----------------------*/
+/* Section */
 section {
+  /* Home */
   position: absolute;
   top: 30%;
   width: 100%;
+  /* Singel post*/
 }
 section .marketing {
   text-align: center;
@@ -57,12 +80,38 @@ section .marketing {
 section .marketing .btn {
   border-radius: 2rem;
 }
+section button {
+  transition: 1s !important;
+}
 section button a {
-  color: black;
   text-decoration: none;
+  color: black;
+  padding: 1rem;
+}
+section button a:hover {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+}
+section button:hover {
+  color: white !important;
+}
+section .post-heading {
+  text-align: center;
+}
+section .post-heading h1 {
+  color: white;
+}
+section .post-heading span {
+  color: white;
+}
+section .post-heading span a, section .post-heading span a:hover {
+  text-decoration: underline;
+  color: white;
+  font-style: italic;
 }
 
-/* Main*/
+/*Main*/
 main .post-preview {
   margin-top: auto;
 }
@@ -83,21 +132,18 @@ main .post-preview .post-meta a {
 }
 main .img-preview img {
   max-width: 10rem;
+  opacity: 0.8;
 }
-
-/* Footer*/
-footer .p-2 {
-  font-size: 0.9rem;
-  color: grey;
-  text-align: center;
+main .preview-container {
+  transition: 1s;
 }
-footer a {
-  color: black;
+main .preview-container:hover {
+  background-color: rgba(31, 53, 66, 0.151);
 }
 
 /* Scroll bar start: width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
   height: 5px;
 }
 

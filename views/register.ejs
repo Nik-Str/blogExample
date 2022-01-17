@@ -2,53 +2,48 @@
 <html lang="en">
   <%- include('layouts/header'); -%>
   <body>
-    <!-- Navigation-->
-    <%- include('layouts/navbar'); -%>
-    <!-- Page Header-->
-    <header class="masthead" style="background-image: url('/assets/img/main-bg.jpg')">
-      <div class="overlay"></div>
+    <!-- Header-->
+      <header class="main-header">
+          <!-- Nav-->
+          <%- include('layouts/navbar'); -%>
+          <!--Section-->
+          <section>
+              <div class="marketing">
+                <h1>Register a New Account</h1>
+                <p>Everything has a beginning!</p>
+              </div>
+          </section>
+      </header>
+      <!-- Main-->
+      <main>
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="page-heading">
-              <h1>Register a new account</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- Main Content -->
-    <main>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <% if(errors !== null && errors.length > 0) { %>
-              <ul class="list-group">
+          <div class="col-lg-8 col-md-10 mx-auto mt-5">
+             <% if(errors !== null && errors.length > 0) { %>
+              <ul class="list-group mb-2">
               <% for (let i = 0; i < errors.length; i++) { %>
                 <li class="list-group-item list-group-item-danger"><%= errors[i] %></li>
                 <% } %>
                 </ul>
               <% } %>
             <form action="/users/register" method="POST" enctype="multipart/form-data">
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
-                  <label>Username</label>
-                  <input type="text" class="form-control" placeholder="Username" id="username" name="username" value="<%= username %>"/>
-                </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Username" id="username" name="username" value="<%= username %>" required/>
+                <label for="floatingInput">Username</label>
               </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
-                  <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Password" id="password" name="password" value="<%= password %>"/>
-                </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" placeholder="Password" id="password" name="password" value="<%= password %>" required/>
+                <label for="floatingPassword">Password</label>
               </div>
               <br />
-              <div id="success"></div>
-              <button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button>
+              <div id="success" class="d-flex justify-content-center justify-content-md-end mb-3">
+                <button type="submit" class="btn-lg btn-dark" id="sendMessageButton">Register</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
+      <hr>
     </main>
     <!-- Footer-->
     <%- include('layouts/footer'); -%>
@@ -56,3 +51,5 @@
     <%- include('layouts/scripts'); -%>
   </body>
 </html>
+
+

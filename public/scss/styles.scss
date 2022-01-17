@@ -1,4 +1,5 @@
 $bg-trans: rgba(255, 255, 255, 0.205);
+$bg-hover: rgba(31, 53, 66, 0.151);
 
 /* main body */
 body {
@@ -6,23 +7,30 @@ body {
   font-size: 16px;
 }
 
-/* Backgrounds */
-.index-header {
+/* Backgrounds*/
+.main-header {
   background-image: url("../assets/img/bg.jpg");
   height: 30rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
 }
 @media only screen and (min-width: 1920px) {
-  .index-header {
+  .main-header {
     background-image: url("../assets/img/bg4k.jpg");
     height: 50rem;
   }
 }
 
-/* Header*/
+.post-header {
+  height: 40rem;
+} 
+
+.main-header, .post-header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/*Header*/
 header {
   nav {
     background-color: $bg-trans;
@@ -40,8 +48,12 @@ header {
       right: 2rem;
     }
 
+    .nav-link{
+      transition: 1s;
+    }
+
     .nav-link:hover {
-      background-color: rgba(31, 53, 66, 0.452);
+      background-color: $bg-hover;
       color: rgb(59, 59, 59);
     }
 
@@ -54,8 +66,24 @@ header {
   }
 }
 
-/*Section */
+/* Footer*/
+footer {
+  .p-2 {
+    font-size: 0.9rem;
+    color: grey;
+    text-align: center;
+  }
+
+  a{
+    color: black;
+  }
+}
+
+
+/*-------------------Home----------------------*/
+/* Section */
 section {
+  /* Home */
   position: absolute;
   top: 30%;
   width: 100%;
@@ -69,14 +97,45 @@ section {
   }
 
   button {
+    transition: 1s !important;
+
     a {
-      color: black;
       text-decoration: none;
+      color: black;
+      padding: 1rem;
+    }
+
+    a:hover{
+      text-decoration: none;
+      color: white;
+      padding: 1rem;
+    }
+  }
+  button:hover {
+    color: white !important;
+  }
+
+  /* Singel post*/
+  .post-heading {
+    text-align: center;
+
+    h1 {
+      color: white;
+    }
+
+    span {
+      color: white;
+
+      a, a:hover{
+        text-decoration: underline;
+        color: white;
+        font-style: italic;
+      }
     }
   }
 }
 
-/* Main*/
+/*Main*/
 main { 
   .post-preview {
     margin-top: auto;
@@ -103,26 +162,21 @@ main {
   .img-preview {
     img{
       max-width: 10rem;
+      opacity: 0.8;
     }
   }
-}
-
-/* Footer*/
-footer {
-  .p-2 {
-    font-size: 0.9rem;
-    color: grey;
-    text-align: center;
+  .preview-container{
+    transition: 1s;
   }
 
-  a{
-    color: black;
+  .preview-container:hover{
+    background-color: $bg-hover;
   }
 }
 
 /* Scroll bar start: width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
   height: 5px;
 }
 /* Track */

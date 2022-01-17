@@ -3,17 +3,17 @@
     <%- include('layouts/header'); -%>
     <body>
         <!-- Header-->
-        <header class="index-header">
+        <header class="main-header">
             <!-- Nav-->
             <%- include('layouts/navbar'); -%>
             <!--Section-->
             <section>
                 <div class="marketing">
-                <h1>Easy Blog</h1>
-                <p>A place for sharing!</p>
-                <button type="button" class="btn btn-outline-dark btn-lg">
-                   <a href="/auth/login">Login</a> 
-                </button>
+                    <h1>Easy Blog</h1>
+                    <p>A place for sharing!</p>
+                    <button type="button" class="btn btn-outline-dark btn-lg">
+                        <a href="/auth/login">Login</a> 
+                    </button>
                 </div>
             </section>
         </header>
@@ -23,7 +23,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <% for(let i = 0; i < allPosts.length; i++) { %>
-                            <div class="d-flex flex-column flex-md-row mt-4">
+                            <div class="preview-container d-flex flex-column flex-md-row mt-4 rounded">
                                 <div class="img-preview  m-auto m-md-0 me-md-3 mb-2 mb-md-0">
                                     <img class="rounded" src="<%= allPosts[i].image %>" alt="">
                                 </div>

@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <%- include('layouts/header');-%>
-
-<body>
-
-  <%- include('layouts/navbar');-%>
-
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/img/main-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>404 Page not found</h1>            
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <hr>
-
-  <%- include('layouts/footer');-%>
-
-  <%- include('layouts/scripts');-%>
-
-</body>
-
+  <%- include('layouts/header'); -%>
+  <body>
+    <!-- Header-->
+    <header class="main-header">
+        <!-- Nav-->
+        <%- include('layouts/navbar'); -%>
+        <!--Section-->
+        <section>
+            <div class="marketing">
+              <h1>404 Not Found</h1>
+              <p>Refresh page and try again!</p>
+            </div>
+        </section>
+    </header>
+  </body>
 </html>
