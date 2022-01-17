@@ -1,4 +1,4 @@
 node_modules
 .env
 .eslintrc.json
-public
+public/img

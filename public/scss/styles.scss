@@ -1,0 +1,142 @@
+$bg-trans: rgba(255, 255, 255, 0.205);
+
+/* main body */
+body {
+  font-family: "Merriweather", serif;
+  font-size: 16px;
+}
+
+/* Backgrounds */
+.index-header {
+  background-image: url("../assets/img/bg.jpg");
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+@media only screen and (min-width: 1920px) {
+  .index-header {
+    background-image: url("../assets/img/bg4k.jpg");
+    height: 50rem;
+  }
+}
+
+/* Header*/
+header {
+  nav {
+    background-color: $bg-trans;
+
+    .navbar-brand {
+      font-size: 1.6rem;
+    }
+
+    a {
+      color: rgb(59, 59, 59);
+    }
+
+    .collapse {
+      position: absolute;
+      right: 2rem;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(31, 53, 66, 0.452);
+      color: rgb(59, 59, 59);
+    }
+
+    @media only screen and (max-width: 992px) {
+      .collapse {
+        position: relative;
+        left: 0rem;
+      }
+    }
+  }
+}
+
+/*Section */
+section {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+
+  .marketing {
+    text-align: center;
+
+    .btn {
+      border-radius: 2rem;
+    }
+  }
+
+  button {
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
+
+/* Main*/
+main { 
+  .post-preview {
+    margin-top: auto;
+
+    a{
+      text-decoration: none;
+    }
+
+    .post-title{
+      font-style: none;
+      text-decoration: 1px solid underline black;
+      color: black;
+    }
+
+    .post-meta {
+      color: grey;
+
+      a{
+        color: black;
+        font-style: italic;
+      }
+    }
+  }
+  .img-preview {
+    img{
+      max-width: 10rem;
+    }
+  }
+}
+
+/* Footer*/
+footer {
+  .p-2 {
+    font-size: 0.9rem;
+    color: grey;
+    text-align: center;
+  }
+
+  a{
+    color: black;
+  }
+}
+
+/* Scroll bar start: width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(59, 59, 59) !important;
+  border-radius: 0rem;
+  border: 1px solid black;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(105, 105, 105) !important;
+  border-radius: 0.4rem;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(133, 133, 133) !important;
+}

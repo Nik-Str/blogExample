@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('layouts/header'); -%>
+    <%- include('layouts/header'); -%>
     <body>
-        <!-- Navigation-->
-        <%- include('layouts/navbar'); -%>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/main-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
+        <!-- Header-->
+        <header class="index-header">
+            <!-- Nav-->
+            <%- include('layouts/navbar'); -%>
+            <!--Section-->
+            <section>
+                <div class="marketing">
+                <h1>Easy Blog</h1>
+                <p>A place for sharing!</p>
+                <button type="button" class="btn btn-outline-dark btn-lg">
+                   <a href="/auth/login">Login</a> 
+                </button>
+                </div>
+            </section>
+        </header>
+        <!-- Main-->
+        <main>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>Easy Blog</h1>
-                            <span class="subheading">A place for sharing!</span>
+                        <% for(let i = 0; i < allPosts.length; i++) { %>
+                            <div class="d-flex flex-column flex-md-row mt-4">
+                                <div class="img-preview  m-auto m-md-0 me-md-3 mb-2 mb-md-0">
+                                    <img class="rounded" src="<%= allPosts[i].image %>" alt="">
+                                </div>
+                                <div class="post-preview text-center text-md-start">
+                                    <a href="/post/<%= allPosts[i]._id%>">
+                                        <h2 class="post-title">
+                                            <%= allPosts[i].title %>
+                                        </h2>
+                                    </a>
+                                    <p class="post-meta">Posted by
+                                        <a href="#"><%= allPosts[i].userid.username %></a>
+                                        on <%= allPosts[i].createdAt.toDateString() %>
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                        <%}%>
+                         <div class="d-flex justify-content-center justify-content-md-end">
+                            <button type="button" class="btn-lg btn-dark">Older Posts</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <% for(let i = 0; i < allPosts.length; i++) { %>
-                        <div class="post-preview">
-                            <a href="/post/<%= allPosts[i]._id%>">
-                                <h2 class="post-title">
-                                    <%= allPosts[i].title %>
-                                </h2>
-                                <h3 class="post-subtitle">
-                                    <%- allPosts[i].body %>
-                                </h3>
-                            </a>
-                            <p class="post-mete">Posted by
-                                <a href="#"><%= allPosts[i].userid.username %></a>
-                                on <%= allPosts[i].createdAt.toDateString() %>
-                            </p>
-                        </div>
-                        <hr>
-                    <%}%>
-                </div>
-            </div>
-        </div>
-         <!-- Footer-->
+            <hr>
+        </main>
+        <!-- Footer-->
         <%- include('layouts/footer'); -%>
         <!-- JS-->
         <%- include('layouts/scripts'); -%>
     </body>
 </html>
+

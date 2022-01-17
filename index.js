@@ -11,10 +11,11 @@ const authMiddleware = require('./middleware/authMiddleware');
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware');
 const flash = require('connect-flash');
 const validationMiddleware = require('./middleware/validationMiddleware');
+const path = require('path');
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
