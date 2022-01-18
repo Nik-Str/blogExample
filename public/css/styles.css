@@ -140,10 +140,13 @@ main .preview-container {
 main .preview-container:hover {
   background-color: rgba(31, 53, 66, 0.151);
 }
+main .fileInput input {
+  font-size: 1.1rem;
+}
 
 /* Scroll bar start: width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
   height: 5px;
 }
 
