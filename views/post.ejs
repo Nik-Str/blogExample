@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('layouts/header'); -%>
-    <body>
-        <!-- Header-->
-        <header class="post-header" style="background-image: url('<%= blogpost.image %>')">
-            <!-- Nav-->
-            <%- include('layouts/navbar'); -%>
-            <!--Section-->
-            <section>
-                <div class="post-heading">
-                    <h1><%= blogpost.title %></h1>
-                    <span>
-                        Posted by
-                        <a href="/user/<%= blogpost.userid._id %>"><%= blogpost.userid.username %></a>
-                        on <%= blogpost.createdAt.toDateString() %>
-                    </span>
-                </div> 
-            </section>
-        </header>
-        <!-- Main-->
-        <main>
-            <!-- Post Content-->
-            <article class="mb-4 mt-4">
-                <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10 col-lg-8 col-xl-7">
-                            <%- blogpost.body %>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <hr>
-        </main>
-       <!-- Footer-->
-        <%- include('layouts/footer'); -%>
-        <!-- JS-->
-        <%- include('layouts/scripts'); -%>
-    </body>
+  <%- include('layouts/header'); -%>
+  <body>
+    <!-- Header-->
+    <header class="post-header" style="background-image: url('<%= blogpost.image %>')">
+      <!-- Nav-->
+      <%- include('layouts/navbar'); -%>
+      <!--Section-->
+      <section>
+        <div class="post-heading">
+          <h1><%= blogpost.title %></h1>
+          <span>
+            Posted by
+            <a href="/user/<%= blogpost.userid._id %>"><%= blogpost.userid.username %></a>
+            on <%= blogpost.createdAt.toDateString() %>
+          </span>
+        </div>
+      </section>
+    </header>
+    <!-- Main-->
+    <main>
+      <!-- Post Content-->
+      <article class="mb-4 mt-4">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7"><%- blogpost.body %></div>
+          </div>
+        </div>
+      </article>
+      <hr />
+    </main>
+    <!-- Footer-->
+    <%- include('layouts/footer'); -%>
+    <!-- JS-->
+    <%- include('layouts/scripts'); -%>
+  </body>
 </html>

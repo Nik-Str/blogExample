@@ -111,6 +111,9 @@ app.get('/user/:id', userPostsController);
 const searchController = require('./controllers/search');
 app.get('/search', searchController);
 
+const searchPostController = require('./controllers/searchPost');
+app.post('/search/blog', searchPostController);
+
 //Not found page
 app.use((req, res) => res.render('notfound'));
 

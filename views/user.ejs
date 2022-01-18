@@ -3,13 +3,13 @@
     <%- include('layouts/header'); -%>
     <body>
         <!-- Header-->
-        <header class="post-header" style="background-image: url('<%= userPosts[0].userid.image %>')">
+        <header class="post-header" style="background-image: url('<%= userImage.image %>')">
             <!-- Nav-->
             <%- include('layouts/navbar'); -%>
             <!--Section-->
             <section>
                 <div class="marketing">
-                    <h1 class="userHeader">Welcome to <i><%= userPosts[0].userid.username %></i> blog!</h1>
+                    <h1 class="userHeader">Welcome to <i><%= userImage.username %></i> blog!</h1>
                 </div>
             </section>
         </header>
