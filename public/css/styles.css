@@ -80,6 +80,9 @@ section .marketing {
 section .marketing .btn {
   border-radius: 2rem;
 }
+section .marketing .userHeader {
+  text-shadow: 2px 2px 5px white;
+}
 section button {
   transition: 1s !important;
 }
@@ -142,6 +145,10 @@ main .preview-container:hover {
 }
 main .fileInput input {
   font-size: 1.1rem;
+}
+main #searchResult a, main #searchResult a:hover {
+  text-decoration: 1px solid underline black;
+  color: black;
 }
 
 /* Scroll bar start: width */

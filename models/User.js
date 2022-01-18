@@ -13,10 +13,15 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Please provide password'],
     },
+    image: {
+      type: String,
+      required: [true, 'Blogpost require image.'],
+    },
   },
   { timestamps: true }
 );
 
+//Encrypt password
 UserSchema.plugin(uniqueValidator);
 
 UserSchema.pre('save', function (next) {

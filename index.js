@@ -50,9 +50,6 @@ app.use(
 // Flash
 app.use(flash());
 
-//Validation for blogpost
-app.use('/posts/store', validationMiddleware);
-
 //Hide "new user" and "logged" links in header if user is already logged in
 global.loggedIn = null;
 app.use('*', (req, res, next) => {
@@ -82,6 +79,7 @@ const getPostController = require('./controllers/getPost');
 app.get('/post/:id', getPostController);
 
 //Post new bloggpost
+app.use('/posts/store', validationMiddleware);
 const storePostController = require('./controllers/storePost');
 app.post('/posts/store', authMiddleware, storePostController);
 
@@ -104,6 +102,14 @@ app.post('/users/login', redirectIfAuthenticatedMiddleware, loginUserController)
 //Log out
 const logoutController = require('./controllers/logout');
 app.get('/auth/logout', logoutController);
+
+//User blog page
+const userPostsController = require('./controllers/getUser');
+app.get('/user/:id', userPostsController);
+
+//Search page
+const searchController = require('./controllers/search');
+app.get('/search', searchController);
 
 //Not found page
 app.use((req, res) => res.render('notfound'));

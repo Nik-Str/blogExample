@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Header-->
+        <header class="main-header">
+            <!-- Nav-->
+            <%- include('layouts/navbar'); -%>
+            <!--Section-->
+            <section>
+                <div class="marketing">
+                    <h1>Search for Blog</h1>
+                    <p>Open minded and engaged!</p>
+                </div>
+            </section>
+        </header>
+        <!-- Main-->
+        <main>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <form class="mt-5">
+                          <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                            <label for="searchInput">Search</label>
+                          </div>
+                        </form>
+                        <div>
+                          <h3 class="text-center">Search result:</h3>
+                          <ul id="searchResult" class="list-group mb-3">
+                             <% for(let i = 0; i < allUsers.length; i++) { %>
+                              <li class="list-group-item">
+                                <a href="/user/<%= allUsers[i]._id %>"><%= allUsers[i].username %></a>
+                              </li>
+                            <%}%>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </main>
+        <!-- Footer-->
+        <%- include('layouts/footer'); -%>
+        <!-- JS-->
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>

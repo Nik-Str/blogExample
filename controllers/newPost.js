@@ -3,6 +3,8 @@ module.exports = (req, res) => {
     if (req.session.userId) {
       let title = '';
       let content = '';
+
+      //If 'middleware/validationMiddleware' flash error => res: req.body & error
       const data = req.flash('data')[0];
 
       if (typeof data != 'undefined') {
@@ -14,7 +16,7 @@ module.exports = (req, res) => {
         errors: req.flash('validationErrors'),
         title: title,
         content: content,
-        createPost: true
+        createPost: true,
       });
     } else {
       res.redirect('/auth/login');

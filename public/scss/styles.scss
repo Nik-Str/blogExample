@@ -79,7 +79,6 @@ footer {
   }
 }
 
-
 /*-------------------Home----------------------*/
 /* Section */
 section {
@@ -93,6 +92,10 @@ section {
 
     .btn {
       border-radius: 2rem;
+    }
+
+    .userHeader {
+      text-shadow: 2px 2px 5px white;
     }
   }
 
@@ -176,6 +179,13 @@ main {
   .fileInput{
     input {
       font-size: 1.1rem;
+    }
+  }
+
+  #searchResult {
+    a, a:hover{
+      text-decoration: 1px solid underline black;
+      color: black;
     }
   }
 }

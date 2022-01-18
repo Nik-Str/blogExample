@@ -28,11 +28,11 @@
               <% } %>
             <form action="/posts/store" method="POST" enctype="multipart/form-data" class="mt-5">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="<%= title %>">
+                <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="<%= title %>" required>
                 <label for="floatingInput">Title</label>
               </div>
               <div class="mb-3">
-                <textarea class="form-control" type="text" rows="5" id="content" name="content"><%= content %></textarea>
+                <textarea class="form-control" type="text" rows="5" id="content" name="content" required><%= content %></textarea>
                 <script>
                     $('#content').summernote({
                       placeholder: 'Hello word!',
@@ -42,7 +42,7 @@
                   </script>
               </div>
               <div class="fileInput">
-                <input type="file" class="form-control form-control-lg" id="image" name="image"/>
+                <input type="file" class="form-control form-control-lg" id="image" name="image"/ required>
               </div>
               <br />
               <div id="success" class="d-flex justify-content-center justify-content-md-end mb-3">

@@ -4,9 +4,10 @@ const path = require('path');
 module.exports = async (req, res) => {
   try {
     let image = req.files.image;
-    //filerna borde få individuella namn, kanske cryptera är enklast?
+    //Moves img to folder
     image.mv(path.resolve(__dirname, '../public/img/', image.name));
 
+    //Save new post
     let newBlogPost = new BlogPost({
       title: req.body.title,
       body: req.body.content,

@@ -12,7 +12,7 @@
                     <h1><%= blogpost.title %></h1>
                     <span>
                         Posted by
-                        <a href="#!"><%= blogpost.userid.username %></a>
+                        <a href="/user/<%= blogpost.userid._id %>"><%= blogpost.userid.username %></a>
                         on <%= blogpost.createdAt.toDateString() %>
                     </span>
                 </div> 
