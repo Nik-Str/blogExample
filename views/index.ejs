@@ -11,9 +11,11 @@
                 <div class="marketing">
                     <h1>Easy Blog</h1>
                     <p>A place for sharing!</p>
+                    <% if(!loggedIn) { %>
                     <button type="button" class="btn btn-outline-dark btn-lg">
                         <a href="/auth/login">Login</a> 
                     </button>
+                    <% } %>
                 </div>
             </section>
         </header>
