@@ -42,7 +42,7 @@ Run the following command for server start:
 $ npm start
 ```
 ## Directory
-
+```
 .
 ├── README.md
 ├── controllers
@@ -97,7 +97,7 @@ $ npm start
     ├── register.ejs
     ├── search.ejs
     └── user.ejs
-
+```
 ## Author
 
 - Created by [Niklas Strömberg](https://www.linkedin.com/in/niklas-str%C3%B6mberg-59b428169)
